@@ -1,0 +1,13 @@
+# Last updated: 11/1/2025, 9:35:06 PM
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        res = nums[0]
+        total = 0
+        
+        for i in nums:
+            if total < 0:
+                total = 0
+            
+            total += i
+            res = max(res, total)
+        return res
