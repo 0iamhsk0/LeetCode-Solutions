@@ -1,0 +1,9 @@
+-- OR
+SELECT 
+FROM 
+WHERE 
+    v.customer_id, count(v.customer_id) count_no_trans
+    visits v
+    NOT EXISTS (SELECT 1 FROM transactions t WHERE v.visit_id = t.visit_id)
+GROUP BY 
+    v.customer_id;
